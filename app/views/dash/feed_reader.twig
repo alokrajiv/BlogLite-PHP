@@ -1,0 +1,51 @@
+{% verbatim %}
+    <div ng-app="FeedReaderApp" ng-cloak>
+        <div ng-controller="ModalDemoCtrl" ng-cloak>
+            <div ng-show="selected">Selection from a modal: {{ selected}}</div>
+            <div ng-controller="FeedCtrl" ng-cloak >
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs="50" layout="column">
+                        <span  infinite-scroll='loadMoreData()' infinite-scroll-distance='0' infinite-scroll-disabled='apiBusy'>
+                            <span id="posts_cards_board" ng-repeat="post in posts track by post.id" my-post-repeat-directive>
+                                <md-card md-theme='default' md-theme-watch>
+                                    <md-card-title>
+                                        <md-card-title-text>
+                                            <span class="md-headline">{{post.heading}}</span>
+                                            <!--<span class="md-subhead" ng-bind-html="post.content"></span>-->
+                                            <span class="md-subhead"><time class="timeago" datetime="{{post.lastUpdated}}">July 17, 2008</time></span>
+                                        </md-card-title-text>
+                                        <md-card-title-media>
+                                            <div class="md-media-lg card-media">
+                                                <img ng-src="/static/dp/{{post.owner.username}}150x150.jpg">
+                                            </div>
+                                        </md-card-title-media>
+                                    </md-card-title>
+                                    <md-card-actions layout="row" layout-align="end center">
+                                        <md-button ng-click="open('lg' , post )">Read</md-button>
+                                        <md-button ng-click="open('sm' , post.id)">Discard</md-button>
+                                    </md-card-actions>
+                                </md-card>
+                            </span>
+                        </span>
+                        <img ng-show="dataLeft" src="/static/img/loading.gif">
+                    </div>
+                </md-content>
+            </div>
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                <h3 class="modal-title">{{data.heading}}</h3>
+                </div>
+                <div class="modal-body">
+                <ul>
+                <h5 ng-bind-html="SkipValidation(data.content)">{{data.content}}</h5>
+                </ul>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+
+        </div>
+    </div>
+{% endverbatim %}

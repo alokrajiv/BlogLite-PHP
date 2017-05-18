@@ -1,0 +1,78 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    Join 
+{% endblock title %}
+{% block main_container %}
+    <div class="container" style="padding-top: 3%;">
+        <div class="row">
+            <div class="col-md-3" id="c1">
+                <div class="container">
+                    <div class="row padder">
+                        <button type="submit" data-path="/signup/2/" class="btn btn-primary form-loader btn-size-spec">
+                            CREATOR
+                        </button>
+                    </div>
+                    <div class="row padder">
+                        <button type="submit" data-path="/signup/3/" class="btn btn-primary form-loader btn-size-spec">
+                            EXPLORER
+                        </button>
+                    </div>
+                    <div class="row padder">
+                        <button type="submit" data-path="/signup/1/" class="btn btn-primary form-loader btn-size-spec">
+                            GAME CHANGER
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" id="c2">
+                <div class="container">
+                    <div class="row padder">
+                        <h4>
+                            Visionary, Euntrepenuer, Opportunist, Captain, The Crazy One<br>
+                            <h6>
+                                Example: Startups
+                            </h6>
+                        </h4>
+                    </div>
+                    <div class="row padder">
+                        <h4>
+                            Specialist, Dreamer, Expert, Knowledge seeker, Trail Blazer<br>
+                            <h6>
+                                Example: Opportunity Seekers, Student, Internet Users, Freelancers, Designers, 9 - 5 Employee ...
+                            </h6>
+                        </h4>
+                    </div>
+                    <div class="row padder">
+                        <h4>
+                            Change Maker, Influencer, Market Leader <br>
+                            <h6>
+                                Examples: Investor, Innovatoin Consultancy, MNCs 
+                            </h6>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+{% block res_extra_post_body %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/static/js/zxcvbn-async.js"></script>
+    <script type="text/javascript" src="/static/js/pwstrength.js"></script>
+    <script type="text/javascript" src="/static/js/signup.js"></script>
+    <script>
+        // $('#c2').html("<h3>Definitions</h3><ol><li>Lorem ipsum 1</li><li>Lorem ipsum 2</li><li>Lorem ipsum 3</li></ol>");
+        $('.form-loader').click(function () {
+            $('#c2').html('<img src="/static/img/loading.gif">');
+            $.get($(this).data('path')).then(function (data) {
+                $('#c2').html(data);
+                signup_init();
+            });
+        });
+
+
+    </script>
+{% endblock res_extra_post_body %}

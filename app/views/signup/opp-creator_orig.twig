@@ -1,0 +1,199 @@
+<div>
+    <form class="form-horizontal signup_form" action="/signup/handle/" method="POST">
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Signup as an Opportunity Seeker</legend>
+            <input type="hidden" name="user-type" value="2">
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label for="fname" class="col-md-4 control-label">First Name:</label>
+                <div class="col-md-4">
+                    <input type="text" name="firstname" id="fname" class="form-control" placeholder="Enter First name" 
+                           data-rule-minlength="true" 
+                           data-msg-minlength="First Name has to be atleast 3 characters long" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label for="mname" class="col-md-4 control-label">Middle Name:</label>
+                <div class="col-md-4">
+                    <input type="text" name="middlename" id="mname" class="form-control" placeholder="Enter Middle name" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label for="lname" class="col-md-4 control-label">Last Name:</label>
+                <div class="col-md-4">
+                    <input type="text" name="lastname" id="lname" class="form-control" placeholder="Enter Last name"  
+                           data-rule-minlength="true" 
+                           data-msg-minlength="Last Name has to be atleast 3 characters long" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="textinput">Date of Birth</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="dob" type="date" placeholder="placeholder" class="form-control input-md" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="radios">Gender</label>
+                <div class="col-md-4">
+                    <label class="radio-inline" for="radios-0">
+                        <input type="radio" name="gender" id="radios-0" value="1" checked="checked">
+                        Male
+                    </label>
+                    <label class="radio-inline" for="radios-1">
+                        <input type="radio" name="gender" id="radios-1" value="2">
+                        Female
+                    </label>
+                    <label class="radio-inline" for="radios-2">
+                        <input type="radio" name="gender" id="radios-2" value="3">
+                        Other
+                    </label>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="textinput">Username</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="username" type="text" placeholder="placeholder" class="form-control input-md" 
+                           data-rule-required="true" />
+                    <div class="input-group-btn">
+                        <!-- Buttons -->
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="textinput">e-mail</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="email" type="text" placeholder="placeholder" class="form-control input-md" 
+                           data-rule-email="true"
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Password input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="passwordinput">Password</label>
+                <div class="col-md-4">
+                    <input id="passwd-main" name="password" type="password" placeholder="placeholder" class="form-control input-md" required="">
+                    Strength:<span class="pwstrength_viewport_progress"></span> <span class="pwstrength_viewport_verdict"></span>
+                </div>
+            </div>
+            <!-- Password input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="passwordinput">Repeat Password</label>
+                <div class="col-md-4">
+                    <input id="passwd-rpt" name="passwordrepeat" type="password"  placeholder="placeholder" class="form-control input-md" 
+                           data-rule-cnfrmpswd="true" 
+                           data-msg-cnfrmpswd="Password Repeat doesn't match"
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="selectbasic">Nationality</label>
+                <div class="col-md-4">
+                    <select id="selectbasic" name="nationality" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        {% set data_set = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Republic of the", "Congo, Democratic Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "St. Kitts and Nevis", "St. Lucia", "St. Vincent and The Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom (UK)", "United States of America (USA)", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City (Holy See)", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"] %}
+
+                        {% for key,value in data_set %}
+                            Value : {{ value }} <br />
+                            <option value=" {{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <!-- Textarea -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="textarea">Address</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textarea" name="address"  
+                              data-rule-required="true"></textarea>
+                </div>
+            </div>
+            <!-- Multiple Checkboxes -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="checkboxes">What are you known for?</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="checkboxes-0">
+                            <input type="checkbox" name="known-for" id="checkboxes-0" value="Web Developer">
+                            Web Developer
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-1">
+                            <input type="checkbox" name="known-for" id="checkboxes-1" value="App Developer">
+                            App Developer
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-2">
+                            <input type="checkbox" name="known-for" id="checkboxes-2" value="UI/UX Designer">
+                            UI/UX Designer
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-3">
+                            <input type="checkbox" name="known-for" id="checkboxes-3" value="Artist">
+                            Artist
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-4">
+                            <input type="checkbox" name="known-for" id="checkboxes-4" value="Writer">
+                            Writer
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-5">
+                            <input type="checkbox" name="known-for" id="checkboxes-5" value="Entrepreneur">
+                            Entrepreneur
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-6">
+                            <input type="checkbox" name="known-for" id="checkboxes-6" value="Investor">
+                            Investor
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-other">
+                            <input type="checkbox" id="checkbox-other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Textarea -->
+            <div class="form-group has-feedback" id="div-other">
+                <label class="col-md-4 control-label" for="textarea">Other:</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textarea" name="known-for-other"></textarea>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

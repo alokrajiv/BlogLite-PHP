@@ -1,0 +1,20 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    405: Method Not Allowed
+{% endblock title %}
+{% block res_extra_pre_body %}
+    <link href="/static/css/error-page-style.css" rel="stylesheet">
+{% endblock res_extra_pre_body %}
+{% block main_container %}
+    <div class="row">
+        <div class="span12">
+            <div class="hero-unit center">
+                <h1>Method Not Allowed <small><font face="Tahoma" color="red">Error 405</font></small></h1>
+                <br />
+                <p>The page was requested with unsupported method, either contact your webmaster or try again. Use your browsers <b>Back</b> button to navigate to the page you have prevously come from</p>
+                <p><b>Or you could just press this neat little button:</b></p>
+                <a href="/" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Take Me Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock main_container %}

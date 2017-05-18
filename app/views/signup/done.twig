@@ -1,0 +1,17 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    Logout
+{% endblock title %}
+{% block main_container %}
+    <div class="container">
+        {% if logout_success %}
+            <h3>WELCOME TO THE NETWORK</h3>
+        {% else %}
+            <h3>SOMETHING WENT WRONG</h3>
+        {% endif %}
+        Redirecting you to the login page in <span id="time_to_redirect">6</span> secs
+    </div>
+{% endblock %}
+{% block res_extra_post_body %}
+    <script src="/static/js/signup_done.js"></script>
+{% endblock res_extra_post_body %}

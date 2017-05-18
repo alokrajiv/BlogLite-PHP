@@ -1,0 +1,21 @@
+/*
+@author Alok Rajiv <mail@alokrajiv.com>
+
+---- LICENSE ----
+Proprietary License
+Copyright (C) Convoice Inc. - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+*/
+/* 
+    Created on : Jun 13, 2016, 1:06:39 AM
+    Author     : Alok Rajiv <mail@alokrajiv.com>
+*/
+
+.center {
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: auto; 
+    margin-top: auto;
+}

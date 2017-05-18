@@ -1,0 +1,122 @@
+<div>dsfsdfds
+    <form class="form-horizontal signup_form" action="/signup/handle/" method="POST">
+        
+            <!-- Form Name -->
+            <legend>Signup as a GameChanger</legend>
+            <input type="hidden" name="user-type" value="1">
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label for="cname" class="col-md-4 control-label">Company Name:</label>
+                <div class="col-md-4">
+                    <input type="text" name="companyname" id="cname" class="form-control" placeholder="Enter First name" 
+                           data-rule-minlength="true" 
+                           data-msg-minlength="First Name has to be atleast 3 characters long" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="ctype">Company Type</label>
+                <div class="col-md-4">
+                    <select id="ctype" name="companytype" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        {% set data_set = ['Product' , 'Service' , 'Combination'] %}
+                        {% for key,value in data_set %}
+                            Value : {{ value }} <br />
+                            <option value=" {{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="doe">Date of Establishment</label>
+                <div class="col-md-4">
+                    <input id="doe" name="doe" type="date" placeholder="placeholder" class="form-control input-md" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="ls">Legal Structure</label>
+                <div class="col-md-4">
+                    <select id="ls" name="legalstructure" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        {% set data_set = ['Sole Proprietorship', 'Partnership', 'Incorporation', 'LLC'] %}
+                        {% for key,value in data_set %}
+                            Value : {{ value }} <br />
+                            <option value=" {{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="cmanagement">Company Managment</label>
+                <div class="col-md-4">
+                    <select id="cmanagement" name="companymanagement" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        {% set data_set = ['1-10 ','11-50 ','51-200 ','201-500 ','501-1000 ','001-5000 ','5001-10,000 ','>10,001'] %}
+                        {% for key,value in data_set%}
+                            Value : {{ value }} <br />
+                            <option value=" {{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="ccategory">Company Category</label>
+                <div class="col-md-4">
+                    <select id="ccategory" name="companycategory" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="location">Location</label>
+                <div class="col-md-4">
+                    <select id="location" name="location" class="form-control" 
+                            data-rule-required="true" >
+                        <option disabled selected value> -- select an option -- </option>
+                        {% set data_set = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Republic of the", "Congo, Democratic Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "St. Kitts and Nevis", "St. Lucia", "St. Vincent and The Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom (UK)", "United States of America (USA)", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City (Holy See)", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"] %}
+
+                        {% for key,value in data_set %}
+                            Value : {{ value }} <br />
+                            <option value=" {{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label for="cwebsite" class="col-md-4 control-label">Company Website:</label>
+                <div class="col-md-4">
+                    <input type="text" name="companywebsite" id="cwebsite" class="form-control" 
+                           placeholder="Enter the Website URL" value=""
+                           data-rule-url="true" 
+                           data-rule-required="true" />
+                    <span class="glyphicon form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </div>
+    </form>
+</div>

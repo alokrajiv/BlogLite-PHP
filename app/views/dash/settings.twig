@@ -1,0 +1,45 @@
+{% extends "partials/default.twig" %} {% block title %} My Dashboard {% endblock title %} 
+{% block res_extra_pre_body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css"> 
+    <link rel="stylesheet" href="/static/css/imagehover.min.css">
+    <style>
+        .dp_box {
+            width: 150px;
+            height: 150px;
+            background-image: url('/static/dp/{{data.username}}150x150.jpg');
+        }
+    </style>
+{% endblock res_extra_pre_body %}
+{% block main_container %}
+    <div class="container">
+        <!-- Click dp to trigger modal -->
+        <figure class="imghvr-push-up dp_box" data-toggle="modal" data-target="#dp_drop_zone_modal">
+            <figcaption style="opacity:0.6;top: 70%;padding: 0%;">
+                <h4>CHANGE PHOTO</h4>
+            </figcaption>
+        </figure>
+        <button class="notif btn btn-lrg" id="notif_test">notify me</button>
+        <!-- Modal -->
+        <div class="modal fade" id="dp_drop_zone_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Change the profile picture</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dropzone_profile_photo" class="dropzone">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} {% block res_extra_post_body %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+    <script type="text/javascript" src="/static/js/dp_update.js"></script>
+{% endblock res_extra_post_body %}

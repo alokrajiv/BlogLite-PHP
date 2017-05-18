@@ -1,0 +1,43 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    HomePage
+{% endblock title %}
+{% block main_container %}
+    <div class="container">
+    <div class="row" style="padding-left: 40%;padding-top: 0%;">
+    <div style="margin-bottom: -12px;">
+            <h1>
+                CONVOICE
+            </h1>
+        </div>
+        <div style="padding-left: 18%" >
+            <h2 class="my-cursive">
+                Be The Change
+            </h2>
+        </div>
+    </div>
+        <div class="row">
+        <div style="padding-left: 15%;padding-right: 20%;padding-top:3%;text-align: justify;text-justify: inter-word;">
+            <h4>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+            </h4>
+            <h4>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+            </h4>
+        </div>
+        <div style="padding-left: 40%;padding-top: 3%;">
+            <h1>
+                <button class="btn btn-primary join-btn">Join Us On This Journey</button>
+            </h1>
+        </div>
+        </div>
+        
+    </div>
+{% endblock %}
+{% block res_extra_post_body %}
+    <script>
+        $('.join-btn').click(function () {
+            window.location = "/join/";
+        });
+    </script>
+{% endblock res_extra_post_body %}

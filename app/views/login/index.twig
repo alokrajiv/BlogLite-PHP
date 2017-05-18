@@ -1,0 +1,25 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    Login Page
+{% endblock title %}
+{% block main_container %}
+<div style="margin-left:40%">
+{% if warn_messg == 0 %}
+        <h3>You need to be logged in to see the page!!</h3>
+    {% elseif warn_messg == 1 %}
+        <h3>You entered wrong credentials!!</h3>
+    {% elseif warn_messg == 2 %}
+        <h3>No such user!! To join click <a href="/join/">here</a></h3>
+    {% endif %}
+    <form action="/login/authenticate/" method="post">
+        Enter Login:<br>
+        <input type="text" name="username" placeholder="username"><br>
+        Enter Password:<br>
+        <input type="password" name="passwd" placeholder="password"><br>
+        <button type="submit">LOGIN</button><br>
+    </form>
+    <h3>OR</h3>
+    <a href="{{loginUrl}}"><img src="/static/img/fb-login.png" style="width:20%;height:10%"></a>
+</div>
+    
+{% endblock %}

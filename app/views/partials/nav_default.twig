@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CONVOICE</a>
+        </div>
+        {% if data.username %}
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul id="nav-links" class="nav navbar-nav">
+                    <li style="padding-top: 16px;">
+                        <!---notif icon starts-->
+                        <div id="noti_Container">
+                            <div id="noti_Counter" style="left:-10px"></div>
+                            <div id="noti_Button" class="notif-empty"></div><div id="notifications">
+                                <h3>Notifications</h3>
+                                <div style="height:300px;"></div>
+                                <div class="seeAll"><a href="#">See All</a></div>
+                            </div>
+                        </div>
+                        <!---notif icon ends-->
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <div>
+                                <img style="width: 20px;height: 20px;" src="/static/dp/{{data.username}}150x150.jpg">
+                                <span class="caret"></span>
+                            </div>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/dash/">Dash</a></li>
+                            <li><a href="/in/{{data.username}}/">Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Actions</li>
+                            <li><a href="/settings/">Settings</a></li>
+                            <li><a href="/logout/">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        {% else %}
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul id="nav-links" class="nav navbar-nav">
+                    <li><a href="/join/">Join</a></li>
+                    <li><a href="/login/">Login</a></li>
+                </ul>
+                <form action="/login/authenticate/" method="post">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{loginUrl}}"><img src="/static/img/fb-login-small.png" style="width:70%;height:10%"></a></li>
+                        <li><a>OR &nbsp;<input type="text" name="username" placeholder="username"></a></li>
+                        <li><a><input type="password" name="passwd" placeholder="password"></a></li>
+                        <li><a><button type="submit">LOGIN</button></a></li>
+                        
+            
+                    </ul>
+                </form>
+            </div>
+
+        {% endif %}
+        <!--/.nav-collapse -->
+    </div>
+</nav>

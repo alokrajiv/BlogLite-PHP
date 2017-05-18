@@ -1,0 +1,52 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    My Dashboard
+{% endblock title %}
+{% block res_extra_pre_body %}
+    <link href="/static/css/feed_reader.css" rel="stylesheet">
+{% endblock res_extra_pre_body %}
+{% block main_container %}
+    <div class="container">
+        <div class="container">
+            <h4>
+                <textarea id="new_post_heading" style="width:50%" rows="1"></textarea>
+            </h4>
+            <textarea id="new_post_content" style="width: 600px; height: 300px;">
+            </textarea>
+            <button id="new_post_submit" >SUBMIT</button>
+            <div class="container" id="posts_container">
+            </div>
+        </div>
+        <span style="padding-top:20px">&nbsp;</span>
+        <div class="w3-container" ng-app="" style="margin: 0 -8% 0;">
+            <div class="w3-row w3-padding-24" ng-repeat="one in [1,2, 3, 4,5]">
+                <div class="w3-container w3-col m1"></div>
+                <div class="w3-container w3-col m2 " ng-repeat="one in [1,2, 3, 4,5]">
+                    <div class="w3-card-12">
+                        <img src="https://www.pushpraj.com/images/cool-scenery.jpg" style="width:100%">
+                        <div class="w3-container w3-lime">
+                            <div class="w3-row w3-right">
+                                <h5>
+                                    <button class="w3-btn w3-hover-blue"><i class="ion-ios-search"></i></button>
+                                    <button class="w3-btn w3-hover-brown"><i class="ion-trash-b"></i></button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="w3-container w3-center">
+                            <p>Convoice is Awesome.</p>
+                        </div>
+                        <div class="w3-container w3-cyan">
+                            <h6>@alokrajiv</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    </div>
+{% endblock %}
+{% block res_extra_post_body %}
+    <script type="text/javascript" src="/static/js/nicEdit.js"></script> 
+    <script type="text/javascript" src="/static/js/poster.js"></script> 
+    <script type="text/javascript" src="/static/js/feed_reader.js"></script>
+{% endblock res_extra_post_body %}

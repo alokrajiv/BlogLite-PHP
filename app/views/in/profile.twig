@@ -1,0 +1,21 @@
+{% extends "partials/default.twig" %}
+{% block title %}
+    My Dashboard
+{% endblock title %}
+{% block res_extra_pre_body %}
+    <style>
+        .dp_box {
+            width: 150px;
+            height: 150px;
+            background-image: url(/static/dp/{{data.username}}150x150.jpg);
+        }
+    </style>
+{% endblock res_extra_pre_body %}
+{% block main_container %}
+    <div class="container">
+        {{data.username}} and is {{data.valid ? 'valid':'not valid'}}
+        <div class="dp_box"></div>
+    </div>
+{% endblock %}
+{% block res_extra_post_body %}
+{% endblock res_extra_post_body %}

@@ -1,0 +1,16 @@
+{
+    "require": {
+        "twig/twig": "~1.0",
+        "phroute/phroute": "^2.1",
+        "malkusch/php-autoloader": "^1.14",
+        "doctrine/orm": "^2.5",
+        "intervention/image": "^2.3",
+        "cboden/ratchet": "^0.3.5",
+        "facebook/php-sdk-v4" : "~5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "app/entities/"
+        }
+    }
+}
